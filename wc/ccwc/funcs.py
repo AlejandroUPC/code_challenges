@@ -27,7 +27,16 @@ def count_words(_input: TextIOWrapper) -> int:
     Given an input is able to return the count of words using '\s' as separator.
 
     Keyword arguments:
-         _input(TextIoWrapper): Input of data to have the words counted on.
+         _input(TextIOWrapper): Input of data to have the words counted on.
     """
-    lines = _split_by_lines(_input)
-    return reduce(lambda a, b: a + len(list(filter(lambda x: x.strip(), b.split(" ")))), lines, 0)
+    return len(_input.read().split())
+
+def count_characters(_input: TextIOWrapper) -> int:
+    """
+    Given an input is able to return the count of characters splitting every word into single characters.
+    
+    Keyword arguments:
+         _input(TextIOWrapper): Input of data to have the characters counted on.
+    """
+    
+    return len(_input.read()) 
